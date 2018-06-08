@@ -17,3 +17,11 @@ See the [iPython notebook](lp_sketch.ipynb) for a detailed walkthrough of implem
 [Powerpoint slides for CS166 presentation](CS166_Final_Presentation.pdf)
 
 [Final paper, largely modeled off ](Final_Paper.pdf)
+
+
+## Interesting tidbits
+
+- The original paper's math intuition is quite unscrutible
+- The bound on *Var[X]* is not tight at all, and tightening it will definitely give practical speedups on the constant factors
+- Likewise, the choice of constant factors *8* and *2* are pretty unoptimized. In practice, choosing better constants (see [paper](Final_Paper.pdf) for details) will lead to significant speedup and reduction in space usage.
+- There are also more optimal solutions for estimating a specific p, with common ones being L-0 and L-2 norm. These are sketched in the original paper. What is impressive about this approach is it works for any *p*, and the techniques used here (taking the mean to reduce variance, then taking the median to bound error rate) is common among approximation algorithms and has a lot of potential applications.
